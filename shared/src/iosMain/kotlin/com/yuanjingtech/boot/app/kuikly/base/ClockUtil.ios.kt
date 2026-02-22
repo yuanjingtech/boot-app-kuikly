@@ -1,7 +1,12 @@
 package com.yuanjingtech.boot.app.kuikly.base
 
-import kotlinx.cinterop.*
-import platform.posix.*
+import kotlinx.cinterop.alloc
+import kotlinx.cinterop.convert
+import kotlinx.cinterop.memScoped
+import kotlinx.cinterop.ptr
+import platform.posix.CLOCK_REALTIME
+import platform.posix.clock_gettime
+import platform.posix.timespec
 
 /**
  * iOS 平台实现

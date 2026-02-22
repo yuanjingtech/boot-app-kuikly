@@ -30,7 +30,6 @@ android {
 
 dependencies {
     implementation(project(":shared"))
-    implementation(project(":composeApp"))
 
     implementation("androidx.recyclerview:recyclerview:1.2.1")
     implementation("androidx.appcompat:appcompat:1.3.1")

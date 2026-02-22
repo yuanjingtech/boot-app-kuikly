@@ -13,6 +13,7 @@ import com.tencent.kuikly.compose.foundation.layout.Column
 import com.tencent.kuikly.compose.foundation.layout.Row
 import com.tencent.kuikly.compose.foundation.layout.Spacer
 import com.tencent.kuikly.compose.foundation.layout.fillMaxSize
+import com.tencent.kuikly.compose.foundation.layout.fillMaxWidth
 import com.tencent.kuikly.compose.foundation.layout.height
 import com.tencent.kuikly.compose.foundation.layout.padding
 import com.tencent.kuikly.compose.foundation.layout.size
@@ -35,9 +36,8 @@ import com.tencent.kuikly.core.nvi.serialization.json.JSONObject
 import com.tencent.kuikly.core.pager.Pager
 import com.tencent.kuikly.core.utils.urlParams
 import com.yuanjingtech.boot.app.kuikly.base.BasePager
-import com.yuanjingtech.boot.app.kuikly.base.bridgeModule
 import com.yuanjingtech.boot.app.kuikly.base.Utils
-import com.tencent.kuikly.compose.foundation.layout.fillMaxWidth
+import com.yuanjingtech.boot.app.kuikly.ui.DemoScreen
 
 @Page("router", supportInLocal = true)
 internal class ComposeRoutePager : BasePager() {
@@ -45,7 +45,8 @@ internal class ComposeRoutePager : BasePager() {
     override fun willInit() {
         super.willInit()
         setContent {
-            ComposeRouteImpl()
+            DemoScreen()
+//            ComposeRouteImpl()
         }
     }
 

@@ -8,7 +8,7 @@ import com.tencent.kuikly.core.nvi.serialization.json.JSONObject
 import kotlin.coroutines.resume
 import kotlin.coroutines.suspendCoroutine
 
-internal class BridgeModule : Module() {
+class BridgeModule : Module() {
 
     override fun moduleName(): String {
         return MODULE_NAME

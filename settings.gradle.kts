@@ -25,6 +25,6 @@ dependencyResolutionManagement {
 rootProject.name = "boot-app-kuikly"
 include(":androidApp")
 include(":shared")
-include(":composeApp")
+include(":common")
 include(":h5App")
 include(":miniApp")

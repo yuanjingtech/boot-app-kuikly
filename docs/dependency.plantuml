@@ -4,18 +4,26 @@ skinparam componentStyle rectangle
 component "shared" as shared {
     [base] as base
     [BridgeModule] as bridge
+    [ClockUtil] as clock
+    [Utils] as utils
+    [DemoScreen] as demo
 }
 
-component "composeApp" as composeApp {
-    [DemoScreen] as demo
+component "common" as common {
 }
 
 component "androidApp" as androidApp
 component "h5App" as h5App
 component "miniApp" as miniApp
+component "iosApp" as iosApp
 
-shared --> composeApp : implementation
-composeApp --> androidApp : implementation
-composeApp --> h5App : implementation
-composeApp --> miniApp : implementation
+shared --> common : implementation
+
+androidApp --> shared : implementation
+h5App --> shared : implementation
+miniApp --> shared : implementation
+iosApp --> shared : implementation
+
+clock --> bridge : dateFormatter()
+demo --> clock : currentTimeMillis(), dateFormatter()
 @enduml
