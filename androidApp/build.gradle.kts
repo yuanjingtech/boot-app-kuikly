@@ -30,6 +30,7 @@ android {
 
 dependencies {
     implementation(project(":shared"))
+    implementation(project(":composeApp"))
 
     implementation("androidx.recyclerview:recyclerview:1.2.1")
     implementation("androidx.appcompat:appcompat:1.3.1")
@@ -40,4 +41,9 @@ dependencies {
     implementation("androidx.dynamicanimation:dynamicanimation:1.0.0")
     implementation("com.github.bumptech.glide:glide:4.12.0")
     annotationProcessor("com.github.bumptech.glide:compiler:4.12.0")
+}
+configurations.all {
+    resolutionStrategy {
+        force("androidx.lifecycle:lifecycle-livedata-core:2.6.2")
+    }
 }

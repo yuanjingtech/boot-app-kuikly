@@ -31,6 +31,7 @@ kotlin {
                 // Import web render, for specific business should use actual version, for example:
                 implementation("com.tencent.kuikly-open.core-render-web:base:${Version.getKuiklyVersion()}")
                 implementation("com.tencent.kuikly-open.core-render-web:h5:${Version.getKuiklyVersion()}")
+                implementation(project(":composeApp"))
             }
         }
     }

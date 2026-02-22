@@ -1,0 +1,21 @@
+@startuml
+skinparam componentStyle rectangle
+
+component "shared" as shared {
+    [base] as base
+    [BridgeModule] as bridge
+}
+
+component "composeApp" as composeApp {
+    [DemoScreen] as demo
+}
+
+component "androidApp" as androidApp
+component "h5App" as h5App
+component "miniApp" as miniApp
+
+shared --> composeApp : implementation
+composeApp --> androidApp : implementation
+composeApp --> h5App : implementation
+composeApp --> miniApp : implementation
+@enduml

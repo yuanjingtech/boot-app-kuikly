@@ -43,6 +43,7 @@ kotlin {
                 // Import web render
                 implementation("com.tencent.kuikly-open.core-render-web:base:${Version.getKuiklyVersion()}")
                 implementation("com.tencent.kuikly-open.core-render-web:miniapp:${Version.getKuiklyVersion()}")
+                implementation(project(":composeApp"))
             }
         }
     }
