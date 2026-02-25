@@ -1,20 +1,20 @@
 Pod::Spec.new do |spec|
     spec.name                     = 'common'
     spec.version                  = '1.0'
-    spec.homepage                 = 'Link to Compose App homepage'
+    spec.homepage                 = 'Link to common homepage'
     spec.source                   = { :http=> ''}
     spec.authors                  = ''
     spec.license                  = 'MIT'
-    spec.summary                  = 'Compose UI Module for Testing and Demo'
-    spec.vendored_frameworks      = 'build/cocoapods/framework/composeApp.framework'
+    spec.summary                  = 'common Module '
+    spec.vendored_frameworks      = 'build/cocoapods/framework/common.framework'
     spec.libraries                = 'c++'
     spec.ios.deployment_target    = '14.1'
                 
                 
-    if !Dir.exist?('build/cocoapods/framework/composeApp.framework') || Dir.empty?('build/cocoapods/framework/composeApp.framework')
+    if !Dir.exist?('build/cocoapods/framework/common.framework') || Dir.empty?('build/cocoapods/framework/common.framework')
         raise "
 
-        Kotlin framework 'composeApp' doesn't exist yet, so a proper Xcode project can't be generated.
+        Kotlin framework 'common' doesn't exist yet, so a proper Xcode project can't be generated.
         'pod install' should be executed after running ':generateDummyFramework' Gradle task:
 
             ./gradlew :common:generateDummyFramework
@@ -28,7 +28,7 @@ Pod::Spec.new do |spec|
                 
     spec.pod_target_xcconfig = {
         'KOTLIN_PROJECT_PATH' => ':common',
-        'PRODUCT_MODULE_NAME' => 'composeApp',
+        'PRODUCT_MODULE_NAME' => 'common',
     }
                 
     spec.script_phases = [
@@ -50,5 +50,5 @@ Pod::Spec.new do |spec|
             SCRIPT
         }
     ]
-                
+    spec.resources = ['src/commonMain/assets/**']
 end

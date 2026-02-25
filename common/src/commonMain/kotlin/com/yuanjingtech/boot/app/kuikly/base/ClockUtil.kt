@@ -12,11 +12,12 @@ import com.tencent.kuikly.core.pager.IPager
  */
 internal expect fun currentTimeMillis(): Long
 fun IPager.currentTimeMillis(): Long {
-    return currentTimeMillis()
+    return com.yuanjingtech.boot.app.kuikly.base.currentTimeMillis()
 }
 
 
 fun IPager.dateFormatter(timestamp: Long, format: String): String {
-    return Utils.bridgeModule(this).dateFormatter(timestamp, format)
+    return this.bridgeModule().dateFormatter(timestamp, format)
 }
 
+internal fun IPager.bridgeModule(): BridgeModule = acquireModule(BridgeModule.MODULE_NAME)

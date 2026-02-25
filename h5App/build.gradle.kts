@@ -14,7 +14,7 @@ kotlin {
         browser {
             webpackTask {
                 // Final output executable JS filename
-                outputFileName = "h5App.js"
+                mainOutputFileName = "h5App.js"
             }
 
             commonWebpackConfig {

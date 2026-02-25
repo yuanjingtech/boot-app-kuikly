@@ -1,6 +1,6 @@
 package com.yuanjingtech.boot.app.kuikly.base
 
-import kotlinx.cinterop.alloc
+import kotlinx.cinterop.ExperimentalForeignApiimport kotlinx.cinterop.alloc
 import kotlinx.cinterop.convert
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.ptr
@@ -11,7 +11,7 @@ import platform.posix.timespec
 /**
  * iOS 平台实现
  */
-@OptIn(kotlinx.cinterop.ExperimentalForeignApi::class)
+@OptIn(ExperimentalForeignApi::class)
 actual fun currentTimeMillis(): Long {
     return memScoped {
         val timeVal = alloc<timespec>()

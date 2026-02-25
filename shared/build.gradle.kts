@@ -26,7 +26,7 @@ kotlin {
     js(IR) {
         browser {
             webpackTask {
-                outputFileName = "nativevue2.js" // 最后输出的名字
+                mainOutputFileName = "nativevue2.js" // 最后输出的名字
             }
 
             commonWebpackConfig {
