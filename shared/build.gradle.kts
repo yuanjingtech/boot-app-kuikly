@@ -98,6 +98,10 @@ kotlin {
 
 ksp {
     arg(KEY_PAGE_NAME, getPageName())
+    arg("moduleId", "shared")
+    arg("isMainModule", "true")              // 是否是主模块
+    arg("subModules", "common")       // 子模块，用&间隔
+    arg("enableMultiModule", "true")          // 启用多模块
 }
 
 dependencies {
