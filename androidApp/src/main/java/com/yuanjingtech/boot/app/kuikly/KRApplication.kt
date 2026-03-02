@@ -6,6 +6,7 @@ class KRApplication : Application() {
 
     init {
         application = this
+        BootApplication.application = this
     }
 
     companion object {

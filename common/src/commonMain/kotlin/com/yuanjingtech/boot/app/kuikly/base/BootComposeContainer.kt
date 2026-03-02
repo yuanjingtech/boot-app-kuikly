@@ -3,9 +3,9 @@ package com.yuanjingtech.boot.app.kuikly.base
 import com.tencent.kuikly.compose.ComposeContainer
 import com.tencent.kuikly.core.module.Module
 import com.tencent.kuikly.core.nvi.serialization.json.JSONObject
-import com.tencent.kuikly.core.reactive.handler.*
+import com.tencent.kuikly.core.reactive.handler.observable
 
-internal abstract class BasePager : ComposeContainer() {
+abstract class BootComposeContainer : ComposeContainer() {
     private var nightModel: Boolean? by observable(null)
 
     override fun createExternalModules(): Map<String, Module>? {

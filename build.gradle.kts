@@ -17,7 +17,7 @@ buildscript {
 }
 subprojects {
     group = "com.yuanjingtech.boot.app.kuikly"
-    version = "1.0.0-alpha.2"
+    version = "1.0.0-alpha.3"
     plugins.withId("maven-publish") {
         configure<PublishingExtension> {
             publications {

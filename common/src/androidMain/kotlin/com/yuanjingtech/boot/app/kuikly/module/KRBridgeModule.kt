@@ -5,10 +5,10 @@ import android.content.ClipboardManager
 import android.content.Context
 import android.util.Log
 import android.widget.Toast
+import com.tencent.kuikly.core.render.android.css.ktx.toMap
 import com.tencent.kuikly.core.render.android.export.KuiklyRenderBaseModule
 import com.tencent.kuikly.core.render.android.export.KuiklyRenderCallback
-import com.yuanjingtech.boot.app.kuikly.KRApplication
-import com.yuanjingtech.boot.app.kuikly.KuiklyRenderActivity
+import com.yuanjingtech.boot.app.kuikly.BootApplication
 import org.json.JSONArray
 import org.json.JSONObject
 import java.text.SimpleDateFormat
@@ -100,7 +100,7 @@ class KRBridgeModule : KuiklyRenderBaseModule() {
         }
         val paramJSON = JSONObject(params)
         Toast.makeText(
-            KRApplication.application,
+            BootApplication.application,
             paramJSON.optString("content"),
             Toast.LENGTH_SHORT
         ).show()

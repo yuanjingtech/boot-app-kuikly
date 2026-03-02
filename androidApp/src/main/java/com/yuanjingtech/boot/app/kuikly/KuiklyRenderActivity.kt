@@ -4,14 +4,13 @@ import android.content.Context
 import android.content.Intent
 import android.graphics.Color
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.view.ViewGroup
 import android.view.WindowManager
-import androidx.appcompat.app.AppCompatActivity
 import com.tencent.kuikly.core.render.android.IKuiklyRenderExport
 import com.tencent.kuikly.core.render.android.adapter.KuiklyRenderAdapterManager
 import com.tencent.kuikly.core.render.android.css.ktx.toMap
-import com.tencent.kuikly.core.render.android.expand.KuiklyRenderViewBaseDelegatorDelegate
 import com.tencent.kuikly.core.render.android.expand.KuiklyRenderViewBaseDelegator
 import com.yuanjingtech.boot.app.kuikly.adapter.KRColorParserAdapter
 import com.yuanjingtech.boot.app.kuikly.adapter.KRFontAdapter
@@ -20,11 +19,10 @@ import com.yuanjingtech.boot.app.kuikly.adapter.KRLogAdapter
 import com.yuanjingtech.boot.app.kuikly.adapter.KRRouterAdapter
 import com.yuanjingtech.boot.app.kuikly.adapter.KRThreadAdapter
 import com.yuanjingtech.boot.app.kuikly.adapter.KRUncaughtExceptionHandlerAdapter
-import com.yuanjingtech.boot.app.kuikly.module.KRBridgeModule
 import com.yuanjingtech.boot.app.kuikly.module.KRShareModule
 import org.json.JSONObject
 
-class KuiklyRenderActivity : AppCompatActivity(), KuiklyRenderViewBaseDelegatorDelegate {
+class KuiklyRenderActivity : BootKuiklyRenderActivity() {
 
     private lateinit var hrContainerView: ViewGroup
     private lateinit var loadingView: View
@@ -50,6 +48,7 @@ class KuiklyRenderActivity : AppCompatActivity(), KuiklyRenderViewBaseDelegatorD
         hrContainerView = findViewById(R.id.hr_container)
         loadingView = findViewById(R.id.hr_loading)
         errorView = findViewById(R.id.hr_error)
+        Log.i("KuiklyRenderActivity", "kuiklyRenderViewDelegator.onAttach(pageName=$pageName)")
         kuiklyRenderViewDelegator.onAttach(hrContainerView, "", pageName, createPageData())
     }
 
@@ -71,9 +70,6 @@ class KuiklyRenderActivity : AppCompatActivity(), KuiklyRenderViewBaseDelegatorD
     override fun registerExternalModule(kuiklyRenderExport: IKuiklyRenderExport) {
         super.registerExternalModule(kuiklyRenderExport)
         with(kuiklyRenderExport) {
-            moduleExport(KRBridgeModule.MODULE_NAME) {
-                KRBridgeModule()
-            }
             moduleExport(KRShareModule.MODULE_NAME) {
                 KRShareModule()
             }
