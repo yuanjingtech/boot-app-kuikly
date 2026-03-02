@@ -96,9 +96,6 @@ kotlin {
     }
 }
 
-group = "com.yuanjingtech.boot.app.kuikly"
-version = System.getenv("kuiklyBizVersion") ?: "1.0.0"
-
 ksp {
     arg(KEY_PAGE_NAME, getPageName())
 }
