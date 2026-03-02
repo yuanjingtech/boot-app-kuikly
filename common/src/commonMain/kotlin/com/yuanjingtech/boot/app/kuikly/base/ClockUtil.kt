@@ -20,4 +20,3 @@ fun IPager.dateFormatter(timestamp: Long, format: String): String {
     return this.bridgeModule().dateFormatter(timestamp, format)
 }
 
-internal fun IPager.bridgeModule(): BridgeModule = acquireModule(BridgeModule.MODULE_NAME)

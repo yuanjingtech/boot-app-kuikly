@@ -47,3 +47,43 @@ println("当前时间戳: $timestamp")
 - [x] 参考 zhuanzhuli-app-kuikly 的 TimeUtil 实现 ClockUtil.DateTime
 - [x] 新增composeApp 用来编写测试/演示 , 依赖 shared,被 androidApp/h5App/miniApp 依赖
 
+#### toastutil
+结构
+```
+common/src/commonMain/kotlin/com/yuanjingtech/boot/app/kuikly/base/BridgeModule.kt  # toast 方法实现
+common/src/commonMain/kotlin/com/yuanjingtech/boot/app/kuikly/base/ToastUtil.kt     # Pager 扩展函数
+```
+用法
+```kotlin
+import com.yuanjingtech.boot.app.kuikly.base.toast
+
+// 在 Pager 中显示 Toast 提示
+pager.toast("这是一条提示信息")
+
+// 示例：表单验证提示
+if (textFieldValue.isEmpty()) {
+    localPager.toast("请输入PageName")
+}
+```
+
+#### phoneutil
+结构
+```
+common/src/commonMain/kotlin/com/yuanjingtech/boot/app/kuikly/base/BridgeModule.kt  # callPhone 方法实现
+common/src/commonMain/kotlin/com/yuanjingtech/boot/app/kuikly/base/PhoneUtil.kt     # Pager 扩展函数
+```
+用法
+```kotlin
+import com.yuanjingtech.boot.app.kuikly.base.callPhone
+
+// 在 Pager 中拨打电话
+pager.callPhone("10086")
+
+// 示例：点击按钮拨打客服电话
+Button(onClick = {
+    localPager.callPhone("400-123-4567")
+}) {
+    Text("联系客服")
+}
+```
+

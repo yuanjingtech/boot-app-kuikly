@@ -5,10 +5,11 @@ import com.tencent.kuikly.core.module.CallbackFn
 import com.tencent.kuikly.core.module.Module
 import com.tencent.kuikly.core.nvi.serialization.json.JSONArray
 import com.tencent.kuikly.core.nvi.serialization.json.JSONObject
+import com.tencent.kuikly.core.pager.IPager
 import kotlin.coroutines.resume
 import kotlin.coroutines.suspendCoroutine
 
-class BridgeModule : Module() {
+internal class BridgeModule : Module() {
 
     override fun moduleName(): String {
         return MODULE_NAME
@@ -355,3 +356,5 @@ class BridgeModule : Module() {
     }
 
 }
+
+internal fun IPager.bridgeModule(): BridgeModule = acquireModule(BridgeModule.MODULE_NAME)
