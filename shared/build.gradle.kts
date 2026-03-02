@@ -5,7 +5,6 @@ plugins {
     kotlin("native.cocoapods")
     id("com.android.library")
     id("com.google.devtools.ksp")
-    id("maven-publish")
     id("com.tencent.kuikly-open.kuikly")
     id("org.jetbrains.compose")
     kotlin("plugin.compose")
@@ -99,18 +98,6 @@ kotlin {
 
 group = "com.yuanjingtech.boot.app.kuikly"
 version = System.getenv("kuiklyBizVersion") ?: "1.0.0"
-
-publishing {
-    repositories {
-        maven {
-            credentials {
-                username = System.getenv("mavenUserName") ?: ""
-                password = System.getenv("mavenPassword") ?: ""
-            }
-            rootProject.properties["mavenUr?"]?.toString()?.let { url = uri(it) }
-        }
-    }
-}
 
 ksp {
     arg(KEY_PAGE_NAME, getPageName())

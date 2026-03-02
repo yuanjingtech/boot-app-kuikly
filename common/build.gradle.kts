@@ -8,6 +8,7 @@ plugins {
     id("com.tencent.kuikly-open.kuikly")
     id("org.jetbrains.compose")
     kotlin("plugin.compose")
+    `maven-publish`
 }
 
 val KEY_PAGE_NAME = "pageName"
