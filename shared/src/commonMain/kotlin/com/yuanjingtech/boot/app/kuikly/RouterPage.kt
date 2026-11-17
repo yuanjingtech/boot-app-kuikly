@@ -35,18 +35,17 @@ import com.tencent.kuikly.core.module.SharedPreferencesModule
 import com.tencent.kuikly.core.nvi.serialization.json.JSONObject
 import com.tencent.kuikly.core.pager.Pager
 import com.tencent.kuikly.core.utils.urlParams
-import com.yuanjingtech.boot.app.kuikly.base.BasePager
+import com.yuanjingtech.boot.app.kuikly.base.BootComposeContainer
 import com.yuanjingtech.boot.app.kuikly.base.toast
-import com.yuanjingtech.boot.app.kuikly.ui.DemoScreen
+import com.yuanjingtech.boot.app.kuikly.ui.MainDemoScreen
 
 @Page("router", supportInLocal = true)
-internal class ComposeRoutePager : BasePager() {
+internal class ComposeRoutePager : BootComposeContainer() {
 
     override fun willInit() {
         super.willInit()
         setContent {
-            DemoScreen()
-//            ComposeRouteImpl()
+            MainDemoScreen()
         }
     }
 

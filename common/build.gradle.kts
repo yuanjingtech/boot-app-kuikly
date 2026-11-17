@@ -1,4 +1,5 @@
 import com.tencent.kuikly.gradle.config.KuiklyConfig
+import org.gradle.kotlin.dsl.implementation
 
 plugins {
     kotlin("multiplatform")
@@ -71,6 +72,7 @@ kotlin {
         }
         val androidMain by getting {
             dependencies {
+                implementation("androidx.appcompat:appcompat:1.3.1")
                 api("com.tencent.kuikly-open:core-render-android:${Version.getKuiklyVersion()}")
             }
         }

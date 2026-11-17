@@ -29,13 +29,13 @@ import com.yuanjingtech.boot.app.kuikly.base.dateFormatter
  * 示例 Composable - 用于测试和演示 ClockUtil
  */
 @Composable
-fun DemoScreen() {
+fun ClockDemoScreen(modifier: Modifier = Modifier.fillMaxSize()) {
     val pager = LocalActivity.current.getPager()
     var timestamp by remember { mutableLongStateOf(0L) }
     var formattedDate by remember { mutableStateOf("") }
 
     Column(
-        modifier = Modifier
+        modifier = modifier
             .fillMaxSize()
             .background(Color(0xFFF5F5F5))
             .padding(24.dp),
